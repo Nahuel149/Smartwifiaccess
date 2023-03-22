@@ -41,7 +41,7 @@ main {
 }
 
 .contact-section h2 {
-    margin-bottom: 0.5
+    margin-bottom: 0.5rem;
 }
 
 .contact-header {
@@ -64,22 +64,51 @@ main {
     margin-right: 1rem;
 }
 
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.social-media a {
+    display: inline-block;
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}
+
 footer {
-    background-color: #0a3d62;
-    padding: 1rem 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
 }
 
-footer nav ul {
+.footer-copyright {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-nav {
     display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
+    justify-content: center;
 }
 
-footer nav ul li {
-    margin-right: 1rem;
+.footer-nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-nav a:hover {
+    color: #ccc;
 }
