@@ -3,121 +3,439 @@
     src: url('font/BebasNeue.ttf') format('truetype');
 }
 
+/* General */
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
 
 body {
-    font-family: 'Jost', sans-serif;
+  font-family: 'Jost', sans-serif;
+  padding: 0 5%; /* Agregar padding a los lados */
 }
 
+section:not(:last-of-type) {
+  margin-bottom: 3px;
+}
+
+/* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5%;
-    background-color: #003366;
-    position: fixed;
-    width: 90%;
-    height: 75px;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #003366;
+  position: fixed;
+  width: 90%;
+  height: 75px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1000;
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .logo {
-    width: 35%;
+  width: 35%;
 }
 
 nav ul {
-    display: flex;
-    list-style-type: none;
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+  position: relative;
 }
 
 nav ul li a {
-    color: red;
-    text-decoration: none;
-    margin-left: 25px;
+  font-weight: bold;
+  color: red;
+  font-size: calc(1em + 6px); /* Aumenta la fuente en 8 puntos */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  transition: all 0.3s ease; /* Agrega transición para el cambio de color y sombra de texto */
+  padding: 5px;
 }
 
+nav ul li a:hover {
+  color: rgb(128, 124, 124); /* Cambia el color del enlace al pasar el mouse por encima */
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+}
+
+nav ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  list-style-type: none;
+  position: absolute;
+  background-color: #003366;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.3s ease;
+}
+
+nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Añade la animación "respirar" */
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+nav ul li ul li {
+  margin: 0;
+}
+
+nav ul li ul li a {
+  padding: 5px 10px;
+  transition: transform 0.3s ease; /* Añade una transición para el efecto de transformación */
+}
+
+/* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
+nav ul li:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FF0000; /* Cambia esto al color que desees */
+}
+
+/* Main */
 main {
-    margin-top: 60px;
+  margin-top: 60px;
 }
 
 .section-space {
-    height: 20px;
+  height: 20px;
 }
 
+section:not(:last-of-type) {
+  margin-bottom: 3px;
+}
+
+/* Slogan */
+#slogan {
+  background-image: url("img/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 50px 0;
+}
+
+#slogan h1,
+#slogan h2 {
+  font-weight: bold;
+  color: red;
+  font-size: calc(1em + 8px); /* Aumenta la fuente en 8 puntos */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
+}
+
+#slogan p {
+  font-size: 28px;
+  color: black;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+}
+
+#slogan .blinking-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#slogan .blinking-image {
+  animation: fadeInOut 3s infinite;
+}
+
+
+/* Certifications */
 #certifications {
-    background-color: white;
-    color: red;
-    padding: 50px 5%;
-    text-align: center;
+  background-color: #f0f0f0;
+  color: red;
+  padding: 50px 5%;
+  text-align: center;
 }
 
+/* Gallery */
 #gallery {
-    background-color: red;
-    color: white;
-    padding: 50px 5%;
+  background-color: rgb(224, 68, 68);
+  color: white;
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px; /* Espacio entre las imágenes */
 }
 
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.gallery-row:nth-child(even) .image-container {
+  order: 2;
+}
+
+.gallery-row .image-container,
+.gallery-row .text-container {
+  flex: 1;
+  padding: 0 15px;
+  position: relative;
+}
+
+.gallery-row .image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-row .image-container:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-row .image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-row .image-container:hover .image-text {
+  opacity: 1;
+}
+
+.gallery-row .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-row .text-container h3 {
+  margin-bottom: 15px;
+}
+
+.gallery-row .text-container p {
+  margin-bottom: 15px;
+}
+
+.gallery-row .text-container a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.image-container {
+  position: relative;
+  margin: 10px;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.7);
+  color: red;
+  font-weight: bold;
+  padding: 5px 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover .image-text,
+.image-container:hover .image-caption {
+  opacity: 1;
+}
+
+/* Newsletter */
 #newsletter {
-    background-color: white;
-    color: red;
-    padding: 50px 5%;
-    text-align: center;
+  background-color: white;
+  color: red;
+  padding: 50px 5%;
+  text-align: center;
 }
 
 #newsletter input[type="email"] {
-    width: 50%;
-    padding: 10px;
-    margin-bottom: 15px;
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 #newsletter button {
-    padding: 10px 20px;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
+/* Contact */
 #contact {
-    background-color: red;
-    color: white;
-    padding: 50px 5%;
-    position: relative;
+  background-color: rgb(43, 255, 0);
+  color: white;
+  padding: 50px 5%;
+  position: relative;
+  padding-bottom: 53px; /* Aumentar el padding-bottom en 3px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+}
+
+/* Alinear y centrar el contenido de la columna izquierda */
+#contact .left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Centrar el formulario en la columna derecha */
+#contact .right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  width: 50%;
 }
 
 #contact::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background-color: blue;
-    clip-path: ellipse(50% 100% at 50% 100%);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: blue;
+  clip-path: ellipse(50% 100% at 50% 100%);
+  z-index: -1;
 }
 
-#contact-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+#contact::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #003366;
+  clip-path: ellipse(50% 100% at 50% 0);
+  z-index: -2;
 }
+
+.neon-image-container {
+  position: relative;
+  width: 100%; /* Ajusta el ancho según sea necesario */
+  max-width: 300px; /* Ajusta el tamaño máximo según sea necesario */
+  margin: 0 auto; /* Centrar la imagen */
+}
+
+.neon-image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.neon-image-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+}
+
+/* Modificar #contact-form para centrar los campos */
+
+#contact-form {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: center.form-row {
+  display: flex;
+  justify-content: space-between;
+};
+  margin: 0 auto;
+  width: 100%; /* Añadir esta línea para ajustar el ancho al 100% */
+}
+
 
 #contact-form label,
 #contact-form input,
@@ -126,16 +444,71 @@ main {
     margin-bottom: 15px;
 }
 
-#contact-form button {
-    grid-column: 1 / -1;
-    padding: 10px 20px;
-    background-color: white;
-    color: blue;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
+#message {
+  height: 185px; /* ajusta la altura según sea necesario */
 }
 
+/* Hacer que el botón ocupe las dos columnas */
+#contact-form button {
+  grid-column: 1 / -1;
+  padding: 10px 20px;
+  background-color: #2000d5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+  width: 100%; /* Añadir esta línea para ajustar el ancho al 100% */
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; /* Cambiar a "center" */
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+.contact-item input,
+.contact-item textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.contact-item label {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.contact-item textarea {
+  resize: none;
+  height: 150px;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #00a5d5;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif; /* Fuente igual que la barra de navegación */
+}
+
+/* Dropdown menu */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -148,6 +521,8 @@ main {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .dropdown-content a {
@@ -158,7 +533,10 @@ main {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  /* Cambie display: block; por opacity: 1; */
+  opacity: 1;
+  /* Agregue esta propiedad para mostrar la línea roja */
+  border-top: 3px solid red;
 }
 
 #back-to-top {
@@ -213,51 +591,38 @@ main {
     font-size: 14px;
     text-align: center;
   }
-  
+
+  /* Latest updates */
+
+  .latest-updates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
   /* Estilos para el footer */
   footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    background-color: #333;
+    background-color: #003366;
     color: #fff;
-    padding: 20px;
+    padding: 3px 2rem; /* Reducido el tamaño del footer */
     font-family: 'Jost', sans-serif;
   }
   
   .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
   .footer-logo {
-    width: 60px;
+    width: 150px; /* Aumentado en un 50% */
     height: auto;
+    order: 1;
   }
-  
+
   footer nav {
-    margin-bottom: 0;
-  }
-  
-  footer nav ul {
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  footer nav ul li {
-    margin-right: 10px;
-  }
-  
-  footer nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  footer p {
-    margin: 0;
+    order: 3;
   }

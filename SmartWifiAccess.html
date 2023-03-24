@@ -14,23 +14,29 @@
             <img src="img/logo500x500.png" alt="Smart WiFi Access Logo" class="logo">
         </div>
         <nav>
-            <ul>
+            <nav class="navbar"></nav>
+            <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#about">About Us</a>
+                    <div class="dropdown-content">
+                        <a href="https://www.example-news.com" class="dropdown-item dropdown-transition">News</a>
+                    </div>
+                </li>
                 <li class="dropdown">
                     <a href="#services">Our Services</a>
                     <div class="dropdown-content">
-                        <a href="https://www.example1.com">Link 1</a>
-                        <a href="https://www.example2.com">Link 2</a>
-                        <a href="https://www.example3.com">Link 3</a>
+                        <a href="https://www.example1.com" class="dropdown-item dropdown-transition">Link 1</a>
+                        <a href="https://www.example2.com" class="dropdown-item dropdown-transition">Link 2</a>
+                        <a href="https://www.example3.com" class="dropdown-item dropdown-transition">Link 3</a>
                     </div>
                 </li>
                 <li class="dropdown">
                     <a href="#networks">Networks</a>
                     <div class="dropdown-content">
-                        <a href="https://www.example4.com">Link 4</a>
-                        <a href="https://www.example5.com">Link 5</a>
-                        <a href="https://www.example6.com">Link 6</a>
+                        <a href="https://www.example4.com" class="dropdown-item dropdown-transition">Link 4</a>
+                        <a href="https://www.example5.com" class="dropdown-item dropdown-transition">Link 5</a>
+                        <a href="https://www.example6.com" class="dropdown-item dropdown-transition">Link 6</a>
                     </div>
                 </li>
                 <li><a href="#contact">Contact Us</a></li>
@@ -38,6 +44,14 @@
         </nav>
     </header>
     <main>
+        <section id="slogan">
+          <h1>Smart WiFi Access</h1>
+          <h2>Connecting you to the world, one Wi-Fi connection at a time.</h2>
+          <div class="blinking-image">
+            <img src="img/logo500x500.png" alt="Logo">
+          </div>
+          <p>Attention to detail and focus on providing a high-quality, reliable connection for each individual user.</p>
+        </section>
         <section id="certifications">
             <h2>CERTIFICATIONS</h2>
             //place for certifications
@@ -74,39 +88,94 @@
             <!-- Content -->
         </section>
         <section id="gallery">
-            <div class="image-container">
-                <img src="img/low voltage.jpg" alt="Low Voltage Installation">
-                <div class="image-caption">Low Voltage Installations</div>
+           <div class="gallery-row">
+                <div class="image-container">
+                  <a href="link1.html">
+                    <img src="img/low voltage.jpg" alt="Low Voltage Installation">
+                    <div class="image-text">Texto de la imagen 1</div>
+                    <div class="image-caption">Low Voltage Installations</div>
+                  </a>
+              </div>
+              <div class="text-container">
+                    <h3>Título de la imagen 1</h3>
+                    <p>Descripción de la imagen 1.</p>
+              </div>
+            </div>
+          <div class="gallery-row">
+            <div class="text-container">
+                <h3>Título de la imagen 2</h3>
+                <p>Descripción de la imagen 2.</p>
             </div>
             <div class="image-container">
+              <a href="link1.html">
                 <img src="img/pbx.jpg" alt="PBX Installation">
+                <div class="image-text">Texto de la imagen 2</div>
                 <div class="image-caption">PBX INSTALLS AND 24/7 SUPPORT</div>
+              </a>     
             </div>
+           </div>
+          <div class="gallery-row">
             <div class="image-container">
+              <a href="link1.html">
                 <img src="img/network design.jpg" alt="Network Design and Installation">
+                <div class="image-text">Texto de la imagen 3</div>
                 <div class="image-caption">NETWORK DESIGNS AND INSTALLATIONS</div>
+              </a>
+            </div>
+            <div class="text-container">
+                <h3>Título de la imagen 3</h3>
+                <p>Descripción de la imagen 3.</p>
+              </div>
+            </div>
+          <div class="gallery-row">  
+            <div class="text-container">
+                <h3>Título de la imagen 4</h3>
+                <p>Descripción de la imagen 4.</p>
             </div>
             <div class="image-container">
+              <a href="link1.html">
                 <img src="img/tester.jpeg" alt="Low Voltage Equipment Tester">
+                <div class="image-text">Texto de la imagen 4</div>
                 <div class="image-caption">LOW VOLTAGE EQUIPMENT TESTER AND REPORTS</div>
+              </a>
             </div>
+          </div>
+           <div class="gallery-row">
             <div class="image-container">
+              <a href="link1.html">
                 <img src="img/tester report.jpeg" alt="Tester Report">
+                <div class="image-text">Texto de la imagen 5</div>
                 <div class="image-caption">24/7 SUPPORT FOR ALL OF OUR SERVICES</div>
+              </a>
+            </div>
+            <div class="text-container">
+                <h3>Título de la imagen 5</h3>
+                <p>Descripción de la imagen 5.</p>
+              </div>
+            </div>
+           <div class="gallery-row">
+            <div class="text-container">
+                <h3>Título de la imagen 6</h3>
+                <p>Descripción de la imagen 6.</p>
             </div>
             <div class="image-container">
+              <a href="link1.html">
                 <img src="img/camera1.jpeg" alt="CCTV Camera">
+                <div class="image-text">Texto de la imagen 6</div>
                 <div class="image-caption">CCTV TECHNOLOGY</div>
+              </a>
             </div>
+           </div>
         </section>
         <section id="newsletter">
             <h2>Subscribe to our newsletter</h2>
             <form>
-                <input type="email" placeholder="Your email">
+                <input type="email" name="email" placeholder="Your email">
                 <button type="submit">Submit</button>
             </form>
         </section>
         <section id="blog-news">
+          <div id="latest-updates">
             <h2>Latest Company Updates</h2>
             <div class="blog-container">
                 <a href="https://www.example-update1.com">
@@ -121,10 +190,17 @@
                     <img src="img/update3.jpg" alt="Update 3">
                     <div class="image-caption">Evento importante 3</div>
                 </a>
-            </div>
+          </div>
+        </div>
         </section>
-        <section id="contact-form">
+        <section id="contact">
+            <div class="left-column">
             <h2>Contact Us</h2>
+            <div class="neon-image-container">
+                <img src="img/conbtact.png" alt="Your image description">
+            </div>
+        </div>
+            <div class="right-column">
             <form action="contact_form.php" method="post">
                 <div class="form-row">
                     <div class="form-group">
@@ -143,7 +219,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
                 </div>
                 <button type="submit" class="submit-button">Send Message</button>
@@ -161,6 +237,7 @@
             </nav>
             <p>&copy; 2023 SMART WIFI ACCESS - ALL RIGHTS RESERVED.</p>
         </div>
+
     </footer>
     <button id="back-to-top">↑</button>
     <script src="smartwifiaccess.js"></script>
