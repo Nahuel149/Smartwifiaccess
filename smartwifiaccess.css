@@ -3,23 +3,11 @@
     src: url('font/BebasNeue.ttf') format('truetype');
 }
 
-/* General */
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
 body {
   font-family: 'Jost', sans-serif;
   padding: 0 5%; /* Agregar padding a los lados */
 }
 
-section:not(:last-of-type) {
-  margin-bottom: 3px;
-}
 
 /* Header */
 header {
@@ -27,7 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
-  background-color: #003366;
+  background-color: #f0f0f0;
   position: fixed;
   width: 90%;
   height: 75px;
@@ -35,7 +23,7 @@ header {
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .logo-container {
@@ -60,7 +48,7 @@ nav ul li {
 
 nav ul li a {
   font-weight: bold;
-  color: red;
+  color: rgb(236, 62, 62);
   font-size: calc(1em + 6px); /* Aumenta la fuente en 8 puntos */
   text-decoration: none; /* Elimina el subrayado de los enlaces */
   transition: all 0.3s ease; /* Agrega transición para el cambio de color y sombra de texto */
@@ -72,42 +60,6 @@ nav ul li a:hover {
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
-nav ul li ul {
-  visibility: hidden;
-  opacity: 0;
-  list-style-type: none;
-  position: absolute;
-  background-color: #003366;
-  padding: 10px;
-  border-radius: 0 0 5px 5px;
-  transition: all 0.3s ease;
-}
-
-nav ul li:hover ul {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Añade la animación "respirar" */
-@keyframes breathe {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-nav ul li ul li {
-  margin: 0;
-}
-
-nav ul li ul li a {
-  padding: 5px 10px;
-  transition: transform 0.3s ease; /* Añade una transición para el efecto de transformación */
-}
-
 /* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
 nav ul li:hover::before {
   content: "";
@@ -116,7 +68,38 @@ nav ul li:hover::before {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #FF0000; /* Cambia esto al color que desees */
+  background-color: rgb(224, 68, 68); /* Cambia esto al color que desees */
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+  color: rgb(224, 68, 68);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease; /* Añade transición para que el menú aparezca lentamente */
+  border-top: 3px solid rgb(224, 68, 68);
 }
 
 /* Main */
@@ -128,13 +111,9 @@ main {
   height: 20px;
 }
 
-section:not(:last-of-type) {
-  margin-bottom: 3px;
-}
-
 /* Slogan */
 #slogan {
-  background-image: url("img/background.png");
+  background-image: url("img/unti.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -145,7 +124,7 @@ section:not(:last-of-type) {
 #slogan h1,
 #slogan h2 {
   font-weight: bold;
-  color: red;
+  color: rgb(224, 68, 68);
   font-size: calc(1em + 8px); /* Aumenta la fuente en 8 puntos */
   text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
 }
@@ -181,15 +160,87 @@ section:not(:last-of-type) {
 /* Certifications */
 #certifications {
   background-color: #f0f0f0;
-  color: red;
+  background-image: url('path/to/your/background-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(224, 68, 68);
   padding: 50px 5%;
   text-align: center;
 }
 
+#certifications h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+#certifications ul.certification-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#certifications ul.certification-list li {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 15px;
+}
+
+#certifications ul.certification-list li:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-image: url('path/to/your/bullet-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.certification-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+    
+.certification-title {
+  margin-top: 10px;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  }
+  
+  .certification-description {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.7em;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+  #certifications ul.certification-list {
+  flex-direction: column;
+  }
+  
+  #certifications ul.certification-list li {
+  flex-basis: 100%;
+  margin-bottom: 15px;
+  }
+  }
+
 /* Gallery */
 #gallery {
   background-color: rgb(224, 68, 68);
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 50px 5%;
   display: flex;
   flex-direction: column;
@@ -218,18 +269,35 @@ section:not(:last-of-type) {
   position: relative;
 }
 
+/* Center the h3 title and adjust the font size */
+.text-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+/* Adjust the font size of the description */
+.text-container p {
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+/* Gallery parte de la imagen en si*/
+
 .gallery-row .image-container img {
   width: 100%;
   height: auto;
-  max-width: 500px;
+  max-width: 750px;
   max-height: 500px;
   object-fit: cover;
   transition: transform 0.5s ease;
+  border-radius: 25px; /* Add this line to make the images rounded */
 }
 
 .gallery-row .image-container:hover img {
   transform: scale(1.05);
 }
+
+/* Gallery fondo cuando respira y texto*/
 
 .gallery-row .image-text {
   position: absolute;
@@ -237,7 +305,9 @@ section:not(:last-of-type) {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px; /* Add padding to create a margin around the text */
+  box-sizing: border-box; /* Adjust the box model to include padding in the dimensions */
+  background-color: rgba(22, 22, 22, 0.5);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -269,12 +339,15 @@ section:not(:last-of-type) {
   text-decoration: underline;
 }
 
+/* Gallery efecto de la imagen cuando respira*/
+
 .image-container {
   position: relative;
   margin: 10px;
-  width: 500px;
+  width: 750px;
   height: 500px;
   overflow: hidden;
+  border-radius: 15px; /* Add this line to make the container rounded */
 }
 
 .image-container img {
@@ -283,6 +356,8 @@ section:not(:last-of-type) {
   height: auto;
 }
 
+/* Gallery texto bajo cuando respira*/
+
 .image-text {
   position: absolute;
   top: 0;
@@ -290,12 +365,14 @@ section:not(:last-of-type) {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  font-size: 1em
 }
 
 .image-caption {
@@ -303,8 +380,8 @@ section:not(:last-of-type) {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(128, 128, 128, 0.7);
-  color: red;
+  background-color: rgba(7, 7, 7, 0.7);
+  color: rgb(248, 243, 243);
   font-weight: bold;
   padding: 5px 0;
   text-align: center;
@@ -317,10 +394,23 @@ section:not(:last-of-type) {
   opacity: 1;
 }
 
+/* Panduit */
+
+#Panduit .Panduit-Container {
+  width: 100%; /* Establecer el ancho del contenedor al 100% de la página */
+}
+
+#Panduit .Panduit-Container img {
+  display: block; /* Hacer que la imagen se muestre como un elemento de bloque */
+  width: 100%; /* Establecer el ancho de la imagen al 100% del contenedor */
+  height: auto; /* Mantener la relación de aspecto de la imagen */
+  object-fit: cover; /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+}
+
 /* Newsletter */
 #newsletter {
-  background-color: white;
-  color: red;
+  background-color: rgb(224, 68, 68);
+  color:  #f0f0f0;
   padding: 50px 5%;
   text-align: center;
 }
@@ -333,19 +423,65 @@ section:not(:last-of-type) {
 
 #newsletter button {
   padding: 10px 20px;
-  background-color: red;
-  color: white;
+  background-color:  #f0f0f0;
+  color: rgb(224, 68, 68);
   border: none;
   cursor: pointer;
 }
 
-/* Contact */
+  /* Latest updates */
+
+#blog-news {
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  padding: 30px 0;
+  text-align: center;
+}
+
+#blog-news h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.blog-container a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.blog-container a.image-link {
+  display: inline-block;
+  width: 280px;
+  overflow: hidden;
+  border-radius: 10px; /* Añade bordes redondeados al contenedor */
+}
+
+.blog-container img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px; /* Añade bordes redondeados a la imagen */
+  object-fit: cover; /* Asegura que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+}
+
+.image-caption {
+  font-size: 14px;
+  text-align: center;
+}
+
+  /* Contact */
 #contact {
-  background-color: rgb(43, 255, 0);
-  color: white;
-  padding: 50px 5%;
+  background-color: rgb(224, 68, 68);
+  color:  #f0f0f0;;
+  padding: 50px 10%;
   position: relative;
-  padding-bottom: 53px; /* Aumentar el padding-bottom en 3px */
+  padding-bottom: 90px; /* Aumentar el padding-bottom en 3px */
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -370,259 +506,110 @@ h2 {
 #contact .right-column {
   display: flex;
   flex-direction: column;
-  justify-content: right;
+  justify-content: center;
   width: 50%;
 }
 
-#contact::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: blue;
-  clip-path: ellipse(50% 100% at 50% 100%);
-  z-index: -1;
+#contact form {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* divide el formulario en 2 columnas */
+  gap: 26px; /* espacio entre las filas y columnas */
+  text-align: center; /* alinea el texto del formulario a la izquierda */
 }
 
-#contact::after {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #003366;
-  clip-path: ellipse(50% 100% at 50% 0);
-  z-index: -2;
+#contact input,
+#contact textarea {
+  width: 100%; /* ocupa todo el ancho disponible en su celda */
+}
+
+/* Hacer que el botón ocupe las dos columnas */
+
+.submit-button {
+  display: block;
+  width: 316%;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: rgb(224, 68, 68);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Jost', sans-serif; /* Fuente igual que la barra de navegación */
 }
 
 .neon-image-container {
   position: relative;
   width: 100%; /* Ajusta el ancho según sea necesario */
-  max-width: 300px; /* Ajusta el tamaño máximo según sea necesario */
+  max-width: 400px; /* Ajusta el tamaño máximo según sea necesario */
   margin: 0 auto; /* Centrar la imagen */
 }
 
 .neon-image-container img {
   width: 100%;
   height: auto;
+  border-radius: 15px; /* Añade bordes redondeados a la imagen */
 }
 
-.neon-image-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
-}
-
-/* Modificar #contact-form para centrar los campos */
-
-#contact-form {
-  display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  max-width: 600px;
-  flex-direction: column;
-  align-items: center.form-row {
-  display: flex;
-  justify-content: space-between;
-};
-  margin: 0 auto;
-  width: 100%; /* Añadir esta línea para ajustar el ancho al 100% */
-}
-
-
-#contact-form label,
-#contact-form input,
-#contact-form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-#message {
-  height: 185px; /* ajusta la altura según sea necesario */
-}
-
-/* Hacer que el botón ocupe las dos columnas */
-#contact-form button {
-  grid-column: 1 / -1;
-  padding: 10px 20px;
-  background-color: #2000d5;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Estilos para el footer */
+footer {
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  padding: 20px 3.8%; /* Agregar padding a los lados */
   font-family: 'Jost', sans-serif;
-  width: 100%; /* Añadir esta línea para ajustar el ancho al 100% */
 }
 
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-content {
   display: flex;
-  justify-content: center; /* Cambiar a "center" */
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.contact-item {
-  width: 48%;
-  margin-bottom: 20px;
+.footer-logo {
+  width: 180px;
 }
 
-.contact-item input,
-.contact-item textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
+/* Estilos para los íconos de redes sociales */
+.social-icons a {
+  color: #f0f0f0;
+  margin: 124px;
 }
 
-.contact-item label {
-  display: block;
-  margin-bottom: 5px;
-  width: 100%;
+.social-icons img {
+  width: 2.5%; /* Reduce el tamaño de la imagen en un 80% */
 }
 
-.contact-item textarea {
-  resize: none;
-  height: 150px;
+footer nav {
+  font-size: 17px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
 }
 
-.submit-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #00a5d5;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: 'Jost', sans-serif; /* Fuente igual que la barra de navegación */
+footer nav ul {
+  display: flex;
+  gap: 20px;
 }
 
-/* Dropdown menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
+.copyright {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 100%; /* Agregar width para que ocupe todo el ancho */
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-  /* Cambie display: block; por opacity: 1; */
-  opacity: 1;
-  /* Agregue esta propiedad para mostrar la línea roja */
-  border-top: 3px solid red;
-}
-
-#back-to-top {
+  /* Estilos para el botón de volver al inicio */
+  #back-to-top {
     display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #000;
+    z-index: 1000; /* Agrega un z-index alto para que aparezca por encima de otros elementos */
+    background-color: rgb(224, 68, 68);
     color: white;
     font-size: 24px;
     padding: 10px 15px;
-    border-radius: 50%;
+    border-radius: 15px;
     cursor: pointer;
 }
-
-#back-to-top:hover {
-    background-color: #555;
-}
-
-#blog-news {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 30px 0;
-    text-align: center;
-  }
-  
-  #blog-news h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .blog-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 960px;
-  }
-  
-  .blog-container a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-  
-  .blog-container img {
-    width: 280px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .image-caption {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  /* Latest updates */
-
-  .latest-updates {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  /* Estilos para el footer */
-  footer {
-    background-color: #003366;
-    color: #fff;
-    padding: 3px 2rem; /* Reducido el tamaño del footer */
-    font-family: 'Jost', sans-serif;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .footer-logo {
-    width: 150px; /* Aumentado en un 50% */
-    height: auto;
-    order: 1;
-  }
-
-  footer nav {
-    order: 3;
-  }
