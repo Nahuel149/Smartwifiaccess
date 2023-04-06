@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-store">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart WiFi Access</title>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="contact_styles.css">
@@ -11,6 +12,9 @@
 </head>
 <body>
     <header>
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+          </div>
         <div class="logo-container">
             <img src="img/logo500x500.png" alt="Smart WiFi Access Logo" class="logo">
         </div>
@@ -19,28 +23,29 @@
             <ul class="nav-list">
                 <li><a href="index">Home</a></li>
                 <li class="dropdown">
-                    <a href="#certifications" class="dropdown-item dropdown-transition">About Us</a>
+                    <a>About Us</a>
                     <div class="dropdown-content">
                         <a href="https://www.example-news.com" class="dropdown-item dropdown-transition">NEWS</a>
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#gallery" class="dropdown-item dropdown-transition">Our Services</a>
+                    <a>Our Services</a>
                     <div class="dropdown-content">
                         <a href="https://www.example1.com" class="dropdown-item dropdown-transition">LOW VOLTAGE INSTALLATIONS</a>
                         <a href="https://www.example2.com" class="dropdown-item dropdown-transition">PBX INSTALLS</a>
                         <a href="https://www.example3.com" class="dropdown-item dropdown-transition">NETWORK DESIGNS AND INSTALLATIONS</a>
+                        <a href="https://www.example4.com" class="dropdown-item dropdown-transition">LOW VOLTAGE EQUIPMENT TESTER AND REPORTS</a>
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a href="#gallery" class="dropdown-item dropdown-transition">Networks</a>
+                    <a>Networks</a>
                     <div class="dropdown-content">
-                        <a href="https://www.example4.com" class="dropdown-item dropdown-transition">LOW VOLTAGE EQUIPMENT TESTER AND REPORTS</a>
                         <a href="https://www.example5.com" class="dropdown-item dropdown-transition">TESTER REPORTS AND 24/7 SUPPORT SERVICES</a>
                         <a href="https://www.example6.com" class="dropdown-item dropdown-transition">CCTV TECHNOLOGY SOLUTIONS</a>
+                        <a href="https://www.example7.com" class="dropdown-item dropdown-transition">CUSTOM A/V SYSTEMS</a>
                     </div>
                 </li>
-                <li><a href="#contact" class="dropdown-item dropdown-transition">Contact Us</a></li>
+                <li><a href="contact">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -125,32 +130,18 @@
     </section>
     </main>
     <footer>
-      <div class="footer-content">
-        <img src="img/logo500x500.png" alt="Smart WiFi Access Logo" class="footer-logo">
-        <div class="social-icons">
-          <a href="https://www.facebook.com">
-            <img src="img/facerojo.png" alt="Facebook">
-          </a>
-          <a href="https://www.twitter.com">
-            <img src="img/twitterrojo.png" alt="Twitter">
-          </a>
-          <a href="https://www.linkedin.com">
-            <img src="img/linkedinorojo.png" alt="LinkedIn">
-          </a>
-          <a href="https://www.instagram.com">
-            <img src="img/instarojo.png" alt="Instagram">
-          </a>
+        <div class="footer-content">
+          <img src="img/logo500x500.png" alt="Smart WiFi Access Logo" class="footer-logo">
+          <p class="copyright">&copy; 2023 SMART WIFI ACCESS - ALL RIGHTS RESERVED.</p>
+          <nav>
+            <ul>
+              <li><a href="privacy">Privacy Policy</a></li>
+              <li><a href="contact">Contact Us</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav>
-          <ul>
-            <li><a href="#privacy-policy">Privacy Policy</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </nav>
-      </div>
-      <p class="copyright">&copy; 2023 SMART WIFI ACCESS - ALL RIGHTS RESERVED.</p>
-      <button id="back-to-top">↑</button>
-    </footer>
-    <script src="scripts.js"></script>
+        <button id="back-to-top">↑</button>
+      </footer>
+    <script src="scriptscontact.js"></script>
 </body>
 </html>

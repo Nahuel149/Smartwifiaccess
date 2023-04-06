@@ -1,4 +1,4 @@
-// Funcionalidad dropdown
+ // Funcionalidad dropdown
 function setupBlinkingImage() {
   const header = document.querySelector('header');
   const blinkingImage = document.getElementById('blinking-image');
@@ -13,7 +13,7 @@ function setupBlinkingImage() {
     blinkingImage.classList.add('fadeOut');
   });
 }
-  
+
 // Initialize functions when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', function () {
   setupBlinkingImage();
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Functionality for the "Back to top" button
+  // Funcionalidad para el botón "Volver arriba"
   const backToTopButton = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', function () {
@@ -52,21 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// Add an event handler to each link
-navLinksSmooth.forEach(link => {
-  link.addEventListener('click', event => {
-    // Prevent the default behavior of the link
-    event.preventDefault();
+// Funcionalidad para moviles
 
-    // Obtain the target of the link (the value of the href attribute)
-    const targetId = link.getAttribute('href');
-
-    // Obtain the target element (using the value of the id attribute)
-    const target = document.querySelector(targetId);
-
-    // Scroll smoothly to the target element
-    target.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+document.querySelector('.menu-icon').addEventListener('click', function () {
+  document.querySelector('nav ul').classList.toggle('show');
 });

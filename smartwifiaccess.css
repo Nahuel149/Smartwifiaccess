@@ -26,6 +26,10 @@ header {
   z-index: 10;
 }
 
+.menu-icon {
+  display: none;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -53,6 +57,7 @@ nav ul li a {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
   transition: all 0.3s ease; /* Agrega transición para el cambio de color y sombra de texto */
   padding: 5px;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
 }
 
 nav ul li a:hover {
@@ -77,14 +82,14 @@ nav ul li:hover::before {
 }
 
 .dropdown-content {
-  display: none;
+  opacity: 0; /* Add this line */
+  visibility: hidden; /* Add this line */
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* Modify this line */
 }
 
 .dropdown-content a {
@@ -96,9 +101,8 @@ nav ul li:hover::before {
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.3s ease; /* Añade transición para que el menú aparezca lentamente */
+  opacity: 1; /* Add this line */
+  visibility: visible; /* Add this line */
   border-top: 3px solid rgb(224, 68, 68);
 }
 
@@ -131,8 +135,8 @@ main {
 
 #slogan p {
   font-size: 28px;
-  color: black;
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+  color: rgb(224, 68, 68);
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
 #slogan .blinking-image {
@@ -160,13 +164,13 @@ main {
 /* Certifications */
 #certifications {
   background-color: #f0f0f0;
-  background-image: url('path/to/your/background-image.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: rgb(224, 68, 68);
   padding: 50px 5%;
   text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 #certifications h2 {
@@ -195,7 +199,6 @@ main {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  background-image: url('path/to/your/bullet-image.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -212,7 +215,7 @@ main {
     
 .certification-title {
   margin-top: 10px;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
   text-align: center;
   }
@@ -220,10 +223,11 @@ main {
   .certification-description {
   text-align: center;
   margin-top: 5px;
-  font-size: 0.7em;
+  font-size: 0.8em;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: none;
   }
   
   @media screen and (max-width: 768px) {
@@ -248,6 +252,7 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px; /* Espacio entre las imágenes */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 .gallery-row {
@@ -314,6 +319,7 @@ main {
   align-items: center;
   opacity: 0;
   transition: opacity 0.5s ease;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 .gallery-row .image-container:hover .image-text {
@@ -413,6 +419,7 @@ main {
   color:  #f0f0f0;
   padding: 50px 5%;
   text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 #newsletter input[type="email"] {
@@ -427,6 +434,7 @@ main {
   color: rgb(224, 68, 68);
   border: none;
   cursor: pointer;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
   /* Latest updates */
@@ -436,6 +444,7 @@ main {
   color: rgb(224, 68, 68);
   padding: 30px 0;
   text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 #blog-news h2 {
@@ -488,6 +497,7 @@ main {
   justify-content: space-between;
   align-items: center;
   margin: 3px 0;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 /* Alinear y centrar el contenido de la columna izquierda */
@@ -556,6 +566,7 @@ footer {
   color: rgb(224, 68, 68);
   padding: 20px 3.8%; /* Agregar padding a los lados */
   font-family: 'Jost', sans-serif;
+  text-shadow: 2px 2px 3px #f0f0f0;
 }
 
 .footer-content {
@@ -568,16 +579,6 @@ footer {
 
 .footer-logo {
   width: 180px;
-}
-
-/* Estilos para los íconos de redes sociales */
-.social-icons a {
-  color: #f0f0f0;
-  margin: 124px;
-}
-
-.social-icons img {
-  width: 2.5%; /* Reduce el tamaño de la imagen en un 80% */
 }
 
 footer nav {
@@ -595,7 +596,6 @@ footer nav ul {
 .copyright {
   text-align: center;
   font-size: 18px;
-  margin-top: 20px;
   width: 100%; /* Agregar width para que ocupe todo el ancho */
 }
 
@@ -610,6 +610,6 @@ footer nav ul {
     color: white;
     font-size: 24px;
     padding: 10px 15px;
-    border-radius: 15px;
+    border-radius: 50px;
     cursor: pointer;
-}
+  }

@@ -141,10 +141,56 @@ main {
   height: 20px;
 }
 
+/* News */
+
+.news-section {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color:#f0f0f0;
+    color:  rgb(224, 68, 68);
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-item {
+    width: 30%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+}
+
+.news-description {
+    text-align: justify;
+    margin: 10px 0;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: rgb(224, 68, 68);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    background-color: rgb(22, 21, 21);
+}
+
   /* Contact */
   #contact {
-    background-color: #f0f0f0;
-    color:  rgb(224, 68, 68);
+    background-color: rgb(224, 68, 68);
+    color:  #f0f0f0;
     padding: 50px 10%;
     position: relative;
     padding-bottom: 90px; /* Aumentar el padding-bottom en 3px */
@@ -218,47 +264,7 @@ main {
     border-radius: 15px; /* Añade bordes redondeados a la imagen */
   }
 
-  .contact-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 2rem 0;
-    width: 100%;
-    background-color: rgb(224, 68, 68); /* Color de fondo rojo */
-    color: white; /* Color de letra blanco */
-    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-  }
   
-  .contact-section-left {
-    flex: 1;
-    padding-right: 2rem;
-    text-align: left;
-  }
-
-  .contact-section-left h2 {
-    text-align: center;
-  }
-  
-  .contact-section-left p {
-    text-align: center;
-  }
-
-  .contact-section-right {
-    flex: 1;
-    padding-left: 1rem;
-    text-align: center;
-  }
-
-  .contact-section-right h2 {
-    padding-right: 10rem;
-    text-align: center;
-  }
-  
-  .contact-section-right p {
-    text-align: center;
-    padding-right: 10rem;
-  }
-
   /* Modifica el siguiente código en contact_styles.css si es necesario */
   
   @media screen and (max-width: 768px) {
@@ -320,42 +326,42 @@ main {
 
 /* Estilos para el footer */
 footer {
-  background-color: #f0f0f0;
-  color: rgb(224, 68, 68);
-  padding: 20px 3.8%; /* Agregar padding a los lados */
-  font-family: 'Jost', sans-serif;
-  text-shadow: 2px 2px 3px #f0f0f0;
-}
-
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.footer-logo {
-  width: 180px;
-}
-
-footer nav {
-  font-size: 17px;
-  text-align: center;
-  display: flex;
-  gap: 10px;
-}
-
-footer nav ul {
-  display: flex;
-  gap: 20px;
-}
-
-.copyright {
-  text-align: center;
-  font-size: 18px;
-  width: 100%; /* Agregar width para que ocupe todo el ancho */
-}
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 20px 3.8%; /* Agregar padding a los lados */
+    font-family: 'Jost', sans-serif;
+    text-shadow: 2px 2px 3px #f0f0f0;
+  }
+  
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .footer-logo {
+    width: 180px;
+  }
+  
+  footer nav {
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+  }
+  
+  footer nav ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 18px;
+    width: 100%; /* Agregar width para que ocupe todo el ancho */
+  }
   
     /* Estilos para el botón de volver al inicio */
     #back-to-top {
