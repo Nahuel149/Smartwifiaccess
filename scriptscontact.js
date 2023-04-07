@@ -14,7 +14,6 @@ function setupBlinkingImage() {
   });
 }
 
-
 // Initialize functions when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', function () {
   setupBlinkingImage();
@@ -25,22 +24,19 @@ document.addEventListener('DOMContentLoaded', function () {
   navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       let hrefValue = this.getAttribute('href');
-      let windowWidth = window.innerWidth;
 
-      // Check if the link is an internal link and not a prevent-scroll link
-    if (hrefValue.startsWith('#') && windowWidth > 768 && !this.classList.contains('prevent-scroll')) {
-      event.preventDefault();
-      let target = document.querySelector(hrefValue);
-      let targetPosition = target.offsetTop - headerHeight;
+      // Check if the link is an internal link
+      if (hrefValue.startsWith('#')) {
+        event.preventDefault();
+        let target = document.querySelector(hrefValue);
+        let targetPosition = target.offsetTop - headerHeight;
 
-      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    } else if (this.classList.contains('prevent-scroll') && windowWidth <= 768) {
-      event.preventDefault();
-    }
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+    });
   });
-});
 
-  // Functionality for the "Back to top" button
+  // Funcionalidad para el botón "Volver arriba"
   const backToTopButton = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', function () {
@@ -60,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('click', function (event) {
   if (!event.target.closest('header')) {
-    document.querySelector('.navbar').classList.remove('open');
+      document.querySelector('.navbar').classList.remove('open');
   }
 });
 
 $(document).ready(function () {
   $("#menu-btn").click(function () {
-    $(".navbar").toggleClass("open");
+      $(".navbar").toggleClass("open");
   });
 });

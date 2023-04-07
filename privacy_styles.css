@@ -155,146 +155,59 @@ main {
   margin-top: 60px;
 }
 
+#privacy-policy {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+  color: rgb(224, 68, 68);
+}
+
+#privacy-policy h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#privacy-policy p {
+  margin-bottom: 10px;
+}
+
+/* Agregar estilos para la clase intro-text */
+.intro-text {
+  text-align: left;
+  color: rgb(224, 68, 68);
+}
+
+/* Agregar estilos para la clase privacy-section */
+.privacy-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#privacy-policy details {
+  border: 1px solid rgb(224, 68, 68);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+#privacy-policy details summary {
+  outline: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(224, 68, 68);
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#privacy-policy details p {
+  text-align: left;
+}
+
 .section-space {
   height: 20px;
-}
-
-/* Contact */
-#contact {
-  background-color: #f0f0f0;
-  color: rgb(224, 68, 68);
-  padding: 50px 10%;
-  position: relative;
-  padding-bottom: 90px;
-  /* Aumentar el padding-bottom en 3px */
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3px 0;
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-}
-
-/* Alinear y centrar el contenido de la columna izquierda */
-#contact .left-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-}
-
-h2 {
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Centrar el formulario en la columna derecha */
-#contact .right-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
-}
-
-#contact form {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  /* divide el formulario en 2 columnas */
-  gap: 26px;
-  /* espacio entre las filas y columnas */
-  text-align: center;
-  /* alinea el texto del formulario a la izquierda */
-}
-
-#contact input,
-#contact textarea {
-  width: 100%;
-  /* ocupa todo el ancho disponible en su celda */
-}
-
-/* Hacer que el botón ocupe las dos columnas */
-
-.submit-button {
-  display: block;
-  width: 316%;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  color: rgb(224, 68, 68);
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  font-family: 'Jost', sans-serif;
-  /* Fuente igual que la barra de navegación */
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-}
-
-.neon-image-container {
-  position: relative;
-  width: 100%;
-  /* Ajusta el ancho según sea necesario */
-  max-width: 400px;
-  /* Ajusta el tamaño máximo según sea necesario */
-  margin: 0 auto;
-  /* Centrar la imagen */
-}
-
-.neon-image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  /* Añade bordes redondeados a la imagen */
-}
-
-  /* Contact section */
-
-.contact-section {
-  background-color: rgb(224, 68, 68);
-}
-
-.contact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.contact-section-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-color: rgb(224, 68, 68);
-  color: white;
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-}
-
-.contact-section-left {
-  flex: 1;
-  padding-right: 2rem;
-  text-align: center;
-}
-
-.contact-section-right {
-  flex: 1;
-  padding-left: 1rem;
-  text-align: center;
-}
-
-/* Panduit */
-
-#Panduit .Panduit-Container {
-  width: 100%;
-  /* Establecer el ancho del contenedor al 100% de la página */
-}
-
-#Panduit .Panduit-Container img {
-  display: block;
-  /* Hacer que la imagen se muestre como un elemento de bloque */
-  width: 100%;
-  /* Establecer el ancho de la imagen al 100% del contenedor */
-  height: auto;
-  /* Mantener la relación de aspecto de la imagen */
-  object-fit: cover;
-  /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
 }
 
 .support-section {
@@ -353,6 +266,17 @@ footer {
   width: 180px;
 }
 
+/* Estilos para los íconos de redes sociales */
+.social-icons a {
+  color: #f0f0f0;
+  margin: 124px;
+}
+
+.social-icons img {
+  width: 2.5%;
+  /* Reduce el tamaño de la imagen en un 80% */
+}
+
 footer nav {
   font-size: 17px;
   text-align: center;
@@ -368,6 +292,7 @@ footer nav ul {
 .copyright {
   text-align: center;
   font-size: 18px;
+  margin-top: 20px;
   width: 100%;
   /* Agregar width para que ocupe todo el ancho */
 }
@@ -386,13 +311,6 @@ footer nav ul {
   padding: 10px 15px;
   border-radius: 50px;
   cursor: pointer;
-}
-
-/* Ajustar el tamaño del botón de volver al inicio */
-#back-to-top {
-  font-size: 20px;
-  padding: 8px 12px;
-  border-radius: 40px;
 }
 
 /* Responsive CSS */
@@ -421,19 +339,24 @@ footer nav ul {
   /* Centra mejor el contenido de la separation bar */
   #separator-bar {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     justify-content: space-between;
     /* Asegurar que haya espacio entre los elementos */
-}
-
-#separator-bar .separator-left {
-    display: block;
-    width: 90%;
-    margin-left: -128px;
   }
-  
+
+  #separator-bar .separator-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 90%;
+    margin-bottom: 20px;
+    /* Agrega un margen inferior de 20px */
+  }
+
   #separator-bar .separator-right {
     display: flex;
     flex-direction: row;
@@ -441,7 +364,7 @@ footer nav ul {
     justify-content: center;
     white-space: nowrap;
     width: 90%;
-    margin-left: 160px;
+    margin-left: 1px;
   }
 
   .separator-right span {
@@ -467,7 +390,6 @@ footer nav ul {
     display: flex;
     flex-direction: column;
     background-color: rgb(224, 68, 68);
-    /* Añade un fondo oscuro */
     color: #f0f0f0;
     position: absolute;
     width: 80%;
@@ -503,57 +425,13 @@ footer nav ul {
     /* Añade un espacio entre los enlaces */
   }
 
-  .contact-section {
-    padding: 20px 18px;
+  section#privacy-policy {
+    padding: 0 18px;
   }
-  
-  .contact-container {
-    padding: 20px 2%;
-  }
-  
-  .contact-section-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .contact-section-left,
-  .contact-section-right {
-    padding: 10px 0;
-    max-width: 100%;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    margin-left: 5%;
-    margin-right: 5%;
-    text-align: center;
-  }
-  
+
   .support-section {
     padding: 0 18px;
     /* Añade 5px de padding a la izquierda y a la derecha */
-  }
-
-  #contact {
-    flex-direction: column;
-  }
-
-  #contact .right-column {
-    width: 100%;
-  }
-
-  #contact form {
-    grid-template-columns: 1fr;
-    /* make form a single column */
-    gap: 15px;
-  }
-
-  .submit-button {
-    width: 102.5%;
-  }
-
-  #Panduit .image-link img {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Mantiene la proporción de aspecto */
   }
 
   /* Footer adjustments */

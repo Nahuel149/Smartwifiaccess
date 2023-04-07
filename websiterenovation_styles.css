@@ -1,0 +1,839 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('font/BebasNeue.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    padding: 0 5%;
+    /* Agregar padding a los lados */
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #f0f0f0;
+    position: fixed;
+    width: 90%;
+    height: 75px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+}
+
+#menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    width: 35%;
+}
+
+.navbar {
+    transition: height 0.3s ease-in-out;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    font-weight: bold;
+    color: rgb(236, 62, 62);
+    font-size: calc(1em + 6px);
+    /* Aumenta la fuente en 8 puntos */
+    text-decoration: none;
+    /* Elimina el subrayado de los enlaces */
+    transition: all 0.3s ease;
+    /* Agrega transición para el cambio de color y sombra de texto */
+    padding: 5px;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+nav ul li a:hover {
+    color: rgb(128, 124, 124);
+    /* Cambia el color del enlace al pasar el mouse por encima */
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+    /* Sombreado para resaltar el texto sobre el fondo rojo */
+}
+
+/* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
+nav ul li:hover::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(224, 68, 68);
+    /* Cambia esto al color que desees */
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    opacity: 0;
+    /* Add this line */
+    visibility: hidden;
+    /* Add this line */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    /* Modify this line */
+}
+
+.dropdown-content a {
+    color: rgb(224, 68, 68);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    /* Add this line */
+    visibility: visible;
+    /* Add this line */
+    border-top: 3px solid rgb(224, 68, 68);
+}
+
+/* barra separadora */
+#separator-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(224, 68, 68);
+    padding: 50px 163px 16px 175px;
+    /* Agrega el valor del padding inferior aquí */
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.separator-left p,
+.separator-right span,
+.separator-right a {
+    color: #f0f0f0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.separator-right a {
+    text-decoration: none;
+}
+
+.separator-right a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+main {
+    margin-top: 60px;
+}
+
+.section-space {
+    height: 20px;
+}
+
+/* Section 1 */
+.section-1 {
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 50px 10%;
+    position: relative;
+    padding-bottom: 90px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 3px 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.section-1 .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 50%;
+}
+
+.section-1 .left-column h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.section-1 .left-column h2 {
+    text-align: left;
+    font-size: 18px;
+}
+
+.section-1 .left-column p {
+    text-align: left;
+    font-size: 14px;
+}
+
+.section-1 .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    width: 40%;
+    margin-left: 27%;
+    /* Agregado para separar la imagen de la columna derecha del texto de la columna izquierda */
+}
+
+/* Section 2 */
+
+.section-2 {
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 30px;
+    box-sizing: border-box;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.section-2 h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 130px;
+    font-size: 30px;
+}
+
+.section-2 h2 {
+    margin-top: 130px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.btn-contact-sales {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    /* Ajusta el valor según la redondez deseada */
+}
+
+.btn-contact-sales2 {
+    display: inline-block;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+    /* Ajusta el valor según la redondez deseada */
+}
+
+.btn-contact-sales:hover {
+    background-color: #0f0f0f;
+}
+
+.btn-contact-sales2:hover {
+    background-color: #0a0a0a;
+}
+
+.button-container {
+    text-align: center;
+    width: 100%;
+}
+
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+}
+
+.image-container {
+    position: relative;
+    width: 19%;
+    /* Ajusta el ancho según la cantidad de espacio que deseas entre las imágenes */
+    margin-bottom: 10px;
+}
+
+.image-container img {
+    display: block;
+    margin: 0 auto;
+    /* Centrar la imagen horizontalmente */
+    width: 35%;
+    /* Ajusta el valor según el tamaño deseado de las imágenes */
+}
+
+.image-container-text {
+    display: flex;
+    /* Ajustar el contenedor para centrar los elementos internos */
+    justify-content: center;
+    /* Centrar los elementos internos horizontalmente */
+    align-items: center;
+    /* Centrar los elementos internos verticalmente */
+}
+
+.arrow {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hidden-text {
+    display: none;
+    position: static;
+    /* Cambia a 'static' para mover el texto debajo de las imágenes */
+    width: 100%;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+    /* Ajusta la duración y la función de tiempo según tus preferencias */
+}
+
+/* Section 3 */
+.section-3 {
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    padding: 50px 10%;
+    position: relative;
+    padding-bottom: 90px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 3px 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.section-3 .r-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 50%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.section-3 .r-column h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.section-3 .r-column h2 {
+    text-align: left;
+    font-size: 18px;
+}
+
+.section-3 .r-column p {
+    text-align: left;
+    font-size: 14px;
+}
+
+.section-3 .l-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    margin-right: 27%;
+    margin-top: 68px;
+    margin-bottom: 30px;
+}
+
+.button-container2 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+/* Contact */
+#contact {
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 50px 10%;
+    position: relative;
+    padding-bottom: 90px;
+    /* Aumentar el padding-bottom en 3px */
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+/* Alinear y centrar el contenido de la columna izquierda */
+#contact .left-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Centrar el formulario en la columna derecha */
+#contact .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+}
+
+#contact form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* divide el formulario en 2 columnas */
+    gap: 26px;
+    /* espacio entre las filas y columnas */
+    text-align: center;
+    /* alinea el texto del formulario a la izquierda */
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    /* ocupa todo el ancho disponible en su celda */
+}
+
+/* Hacer que el botón ocupe las dos columnas */
+
+.submit-button {
+    display: block;
+    width: 316%;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    color: rgb(224, 68, 68);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    /* Fuente igual que la barra de navegación */
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.neon-image-container {
+    position: relative;
+    width: 100%;
+    /* Ajusta el ancho según sea necesario */
+    max-width: 400px;
+    /* Ajusta el tamaño máximo según sea necesario */
+    margin: 0 auto;
+    /* Centrar la imagen */
+}
+
+.neon-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    /* Añade bordes redondeados a la imagen */
+}
+
+/* Panduit */
+
+#Panduit .Panduit-Container {
+    width: 100%;
+    /* Establecer el ancho del contenedor al 100% de la página */
+}
+
+#Panduit .Panduit-Container img {
+    display: block;
+    /* Hacer que la imagen se muestre como un elemento de bloque */
+    width: 100%;
+    /* Establecer el ancho de la imagen al 100% del contenedor */
+    height: auto;
+    /* Mantener la relación de aspecto de la imagen */
+    object-fit: cover;
+    /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+}
+
+.support-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: rgb(224, 68, 68);
+    /* Agregar fondo rojo */
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.support-section-left p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0f0f0;
+    /* Cambiar el color del texto a blanco */
+}
+
+.email-support-button {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(224, 68, 68)
+        /* Cambiar el color del texto a blanco */
+}
+
+.email-support-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para el botón de volver al inicio */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    /* Agrega un z-index alto para que aparezca por encima de otros elementos */
+    background-color: rgb(224, 68, 68);
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+/* Ajustar el tamaño del botón de volver al inicio */
+#back-to-top {
+    font-size: 20px;
+    padding: 8px 12px;
+    border-radius: 40px;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
+    padding: 20px 3.8%;
+    /* Agregar padding a los lados */
+    font-family: 'Jost', sans-serif;
+    text-shadow: 2px 2px 3px #f0f0f0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 180px;
+}
+
+footer nav {
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    gap: 10px;
+}
+
+footer nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 18px;
+    width: 100%;
+    /* Agregar width para que ocupe todo el ancho */
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 8px 5%;
+        margin: 0;
+    }
+
+    /* Agrega las siguientes reglas para estirar el ancho de la página */
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        /* Eliminar blanco */
+    }
+
+    .logo-container img {
+        max-width: 100%;
+        /* Adjust the maximum width of the logo */
+        height: auto;
+        /* Maintain the aspect ratio */
+    }
+
+    /* Centra mejor el contenido de la separation bar */
+    #separator-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        justify-content: space-between;
+        /* Asegurar que haya espacio entre los elementos */
+    }
+
+    #separator-bar .separator-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        width: 90%;
+        margin-bottom: 20px;
+        /* Agrega un margen inferior de 20px */
+    }
+
+    #separator-bar .separator-right {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        width: 90%;
+        margin-left: 1px;
+    }
+
+    .separator-right span {
+        padding: 0 5px;
+    }
+
+    #menu-btn {
+        display: block;
+        background-color: rgb(224, 68, 68);
+        color: #f0f0f0;
+        border-radius: 5px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar.open {
+        display: block;
+    }
+
+    .navbar.open ul {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(224, 68, 68);
+        /* Añade un fondo oscuro */
+        color: #f0f0f0;
+        position: absolute;
+        width: 80%;
+        /* Ajusta el ancho */
+        top: 100%;
+        left: 7%;
+        /* Centra el menú en el medio */
+        padding: 20px;
+        /* Añade un espacio alrededor del menú */
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+        border-radius: 8px;
+        /* Redondea las esquinas */
+    }
+
+    .navbar.open ul .dropdown-content a {
+        color: rgb(224, 68, 68);
+        background-color: #f0f0f0;
+    }
+
+    .navbar.open ul li {
+        list-style: none;
+        padding: 10px 0;
+    }
+
+    .navbar.open ul li a {
+        color: #ffffff;
+        /* Cambia el color del texto a blanco */
+        font-size: 18px;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 8px;
+        /* Añade un espacio entre los enlaces */
+    }
+
+    .section-1,
+    .section-3 {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .section-1 .left-column,
+    .section-3 .r-column {
+        width: 100%;
+        order: 1;
+    }
+
+    .section-1 .right-column,
+    .section-3 .l-column {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width: 70%;
+    }
+
+    .support-section {
+        padding: 0 18px;
+        /* Añade 5px de padding a la izquierda y a la derecha */
+    }
+
+    .section-2 .image-container img {
+        width: 25%;
+        /* Hace que las imágenes sean un 50% más pequeñas */
+    }
+
+    .section-2 h1 {
+        margin-bottom: 60px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
+
+    .section-2 h2 {
+        margin-top: 50px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
+
+    .section-2 .image-container:not(:last-child) {
+        margin-bottom: 100px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
+
+    .r-column h2 {
+        margin-bottom: 40px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
+    }
+
+    .r-column p {
+        margin-bottom: 45px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
+        font-size: 18px;
+    }
+
+    .section-1 .left-column p {
+        margin-bottom: 45px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
+        font-size: 16px;
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    #contact .right-column {
+        width: 100%;
+    }
+
+    #contact form {
+        grid-template-columns: 1fr;
+        /* make form a single column */
+        gap: 15px;
+    }
+
+    .submit-button {
+        width: 102.5%;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 20px 3%;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        width: 50%;
+        max-width: 200px;
+    }
+
+    .copyright {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    footer nav {
+        text-align: center;
+    }
+
+    footer nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer nav ul li {
+        margin: 0 5px;
+        right: 22px;
+    }
+
+    /* Back to top button adjustment */
+    #back-to-top {
+        position: fixed;
+        right: 3px;
+        font-size: 9px;
+        /* Adjust the font size */
+    }
+}

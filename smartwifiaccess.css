@@ -1,96 +1,870 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('font/BebasNeue.ttf') format('truetype');
-  }
+  font-family: 'CustomFont';
+  src: url('font/BebasNeue.ttf') format('truetype');
+}
+
 body {
-    margin: 0;
-    font-family: 'CustomFont', Arial, sans-serif;
-    background-color: #02084b;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Jost', sans-serif;
+  padding: 0 5%;
+  /* Agregar padding a los lados */
 }
 
-main {
-    flex: 1;
-}
-
+/* Header */
 header {
-    background-color: #02084b;
-    padding: 1rem 0;
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #f0f0f0;
+  position: fixed;
+  width: 90%;
+  height: 75px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+}
+
+#menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .logo-container {
-    position: absolute;
-    top: 1000%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-.logo-container img {
-    width: 600px;
-    height: auto;
-}
-
-nav {
-    background-color: #ff3131;
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    margin: 0 1rem;
+.logo {
+  width: 35%;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
+  display: flex;
+  list-style-type: none;
 }
 
-nav li {
-    margin: 0 1rem;
+nav ul li {
+  margin-left: 20px;
+  position: relative;
 }
 
-nav a {
-    color: black;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: white;
-    border-radius: 25px;
+nav ul li a {
+  font-weight: bold;
+  color: rgb(236, 62, 62);
+  font-size: calc(1em + 6px);
+  /* Aumenta la fuente en 8 puntos */
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  transition: all 0.3s ease;
+  /* Agrega transición para el cambio de color y sombra de texto */
+  padding: 5px;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+nav ul li a:hover {
+  color: rgb(128, 124, 124);
+  /* Cambia el color del enlace al pasar el mouse por encima */
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
-section {
-    padding: 2rem 0;
+/* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
+nav ul li:hover::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(224, 68, 68);
+  /* Cambia esto al color que desees */
 }
 
-header nav {
-    position: absolute;
-    top: 170%;
-    right: 0;
-    transform: translateY(-50%);
+/* Dropdown menu */
+.dropdown {
+  position: relative;
 }
 
+.dropdown-content {
+  opacity: 0;
+  /* Add this line */
+  visibility: hidden;
+  /* Add this line */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  /* Modify this line */
+}
+
+.dropdown-content a {
+  color: rgb(224, 68, 68);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  /* Add this line */
+  visibility: visible;
+  /* Add this line */
+  border-top: 3px solid rgb(224, 68, 68);
+}
+
+/* Main */
+main {
+  margin-top: 60px;
+}
+
+.section-space {
+  height: 20px;
+}
+
+/* Slogan */
+#slogan {
+  background-image: url("img/unti.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 50px 0;
+}
+
+#slogan h1,
+#slogan h2 {
+  font-weight: bold;
+  color: rgb(224, 68, 68);
+  font-size: calc(1em + 8px);
+  /* Aumenta la fuente en 8 puntos */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#slogan p {
+  font-size: 28px;
+  color: rgb(224, 68, 68);
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+  /* Sombreado para resaltar el texto sobre el fondo rojo */
+}
+
+#slogan .blinking-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeInOut {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+#slogan .blinking-image {
+  animation: fadeInOut 3s infinite;
+}
+
+
+/* Certifications */
+#certifications {
+  background-color: #f0f0f0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(224, 68, 68);
+  padding: 50px 5%;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#certifications h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+#certifications ul.certification-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#certifications ul.certification-list li {
+  flex-basis: calc(33.333% - 20px);
+  margin-bottom: 15px;
+}
+
+#certifications ul.certification-list li:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.certification-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.certification-title {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: none;
+  margin-bottom: 15px;
+}
+
+.certification-description {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.8em;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+/* Gallery */
+#gallery {
+  background-color: rgb(224, 68, 68);
+  color: rgb(255, 255, 255);
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  /* Espacio entre las imágenes */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.gallery-row:nth-child(even) .image-container {
+  order: 2;
+}
+
+.gallery-row .image-container,
+.gallery-row .text-container {
+  flex: 1;
+  padding: 0 15px;
+  position: relative;
+}
+
+/* Center the h3 title and adjust the font size */
+.text-container h3 {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+/* Adjust the font size of the description */
+.text-container p {
+  font-size: 1.1em;
+  text-align: justify;
+}
+
+/* Gallery parte de la imagen en si*/
+
+.gallery-row .image-container img {
+  width: 100%;
+  height: auto;
+  max-width: 750px;
+  max-height: 500px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: 25px;
+  /* Add this line to make the images rounded */
+}
+
+.gallery-row .image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Gallery fondo cuando respira y texto*/
+
+.gallery-row .image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  /* Add padding to create a margin around the text */
+  box-sizing: border-box;
+  /* Adjust the box model to include padding in the dimensions */
+  background-color: rgba(22, 22, 22, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+.gallery-row .image-container:hover .image-text {
+  opacity: 1;
+}
+
+.gallery-row .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gallery-row .text-container h3 {
+  margin-bottom: 15px;
+}
+
+.gallery-row .text-container p {
+  margin-bottom: 15px;
+}
+
+.gallery-row .text-container a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Gallery efecto de la imagen cuando respira*/
+
+.image-container {
+  position: relative;
+  margin: 10px;
+  width: 750px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 15px;
+  /* Add this line to make the container rounded */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Gallery texto bajo cuando respira*/
+
+.image-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: center;
+  font-size: 1em
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(7, 7, 7, 0.7);
+  color: rgb(248, 243, 243);
+  font-weight: bold;
+  padding: 5px 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover .image-text,
+.image-container:hover .image-caption {
+  opacity: 1;
+}
+
+/* Panduit */
+
+#Panduit .Panduit-Container {
+  width: 100%;
+  /* Establecer el ancho del contenedor al 100% de la página */
+}
+
+#Panduit .Panduit-Container img {
+  display: block;
+  /* Hacer que la imagen se muestre como un elemento de bloque */
+  width: 100%;
+  /* Establecer el ancho de la imagen al 100% del contenedor */
+  height: auto;
+  /* Mantener la relación de aspecto de la imagen */
+  object-fit: cover;
+  /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+}
+
+/* Newsletter */
+#newsletter {
+  background-color: rgb(224, 68, 68);
+  color: #f0f0f0;
+  padding: 50px 5%;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#newsletter input[type="email"] {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+#newsletter button {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  border: none;
+  cursor: pointer;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+/* Latest updates */
+
+#blog-news {
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  padding: 30px 0;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#blog-news h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+.blog-container a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.blog-container a.image-link {
+  display: inline-block;
+  width: 280px;
+  overflow: hidden;
+  border-radius: 10px;
+  /* Añade bordes redondeados al contenedor */
+}
+
+.blog-container img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  /* Añade bordes redondeados a la imagen */
+  object-fit: cover;
+  /* Asegura que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+}
+
+.image-caption {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Contact */
+#contact {
+  background-color: rgb(224, 68, 68);
+  color: #f0f0f0;
+  ;
+  padding: 50px 10%;
+  position: relative;
+  padding-bottom: 90px;
+  /* Aumentar el padding-bottom en 3px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 0;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+/* Alinear y centrar el contenido de la columna izquierda */
+#contact .left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Centrar el formulario en la columna derecha */
+#contact .right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+#contact form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* divide el formulario en 2 columnas */
+  gap: 26px;
+  /* espacio entre las filas y columnas */
+  text-align: center;
+  /* alinea el texto del formulario a la izquierda */
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  /* ocupa todo el ancho disponible en su celda */
+}
+
+/* Hacer que el botón ocupe las dos columnas */
+
+.submit-button {
+  display: block;
+  width: 316%;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  color: rgb(224, 68, 68);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  /* Fuente igual que la barra de navegación */
+}
+
+.neon-image-container {
+  position: relative;
+  width: 100%;
+  /* Ajusta el ancho según sea necesario */
+  max-width: 400px;
+  /* Ajusta el tamaño máximo según sea necesario */
+  margin: 0 auto;
+  /* Centrar la imagen */
+}
+
+.neon-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  /* Añade bordes redondeados a la imagen */
+}
+
+/* Estilos para el botón de volver al inicio */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Agrega un z-index alto para que aparezca por encima de otros elementos */
+  background-color: rgb(224, 68, 68);
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Estilos para el footer */
 footer {
-    background-color: #0a3d62;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  padding: 20px 3.8%;
+  /* Agregar padding a los lados */
+  font-family: 'Jost', sans-serif;
+  text-shadow: 2px 2px 3px #f0f0f0;
 }
 
-canvas {
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 180px;
+}
+
+footer nav {
+  font-size: 17px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+}
+
+footer nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  /* Agregar width para que ocupe todo el ancho */
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 8px 5%;
+    margin: 0;
+  }
+
+  /* Agrega las siguientes reglas para estirar el ancho de la página */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Eliminar blanco */
+  }
+
+  .logo-container img {
+    max-width: 100%;
+    /* Adjust the maximum width of the logo */
+    height: auto;
+    /* Maintain the aspect ratio */
+  }
+
+  .blinking-image img {
+    max-width: 100%;
+    /* Adjust the maximum width of the image */
+    height: auto;
+    /* Maintain the aspect ratio */
+  }
+
+  #menu-btn {
+    display: block;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.open {
+    display: block;
+  }
+
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(224, 68, 68);
+    /* Añade un fondo oscuro */
+    color: #f0f0f0;
+    position: absolute;
+    width: 80%;
+    /* Ajusta el ancho */
+    top: 100%;
+    left: 7%;
+    /* Centra el menú en el medio */
+    padding: 20px;
+    /* Añade un espacio alrededor del menú */
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+    border-radius: 8px;
+    /* Redondea las esquinas */
+  }
+
+  .navbar.open ul .dropdown-content a {
+    color: rgb(224, 68, 68);
+    background-color: #f0f0f0;
+  }
+
+  .navbar.open ul li {
+    list-style: none;
+    padding: 10px 0;
+  }
+
+  .navbar.open ul li a {
+    color: #ffffff;
+    /* Cambia el color del texto a blanco */
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    /* Añade un espacio entre los enlaces */
+  }
+
+  /* Slogan */
+  #slogan h1 {
+    font-size: 34px;
+  }
+
+  #slogan h2 {
+    font-size: 22px;
+  }
+
+  #slogan p {
+    font-size: 20px;
+  }
+
+  .certification-list li {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .certification-list li:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+
+  .gallery-row {
+    flex-direction: column;
+  }
+
+  .gallery-row .image-container,
+  .gallery-row .text-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .text-container h3 {
+    font-size: 1.5em;
+  }
+
+  .text-container p {
+    font-size: 1em;
+  }
+
+  /* Cambiar el orden de la imagen y el texto en todas las filas */
+  .gallery-row .image-container {
+    order: 1;
+  }
+
+  .gallery-row .text-container {
+    order: 2;
+  }
+
+  /* Para mostrar la imagen y el texto uno debajo del otro */
+  .gallery-row:nth-child(even) .image-container {
+    order: 1;
+  }
+
+  #newsletter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #newsletter form {
+    display: block;
+  }
+
+  #newsletter input[type="email"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 8px 0;
+
+  }
+
+  #contact {
+    flex-direction: column;
+  }
+
+  #contact .right-column {
+    width: 100%;
+  }
+
+  #contact form {
+    grid-template-columns: 1fr;
+    /* make form a single column */
+    gap: 15px;
+  }
+
+  .submit-button {
+    width: 102.5%;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 20px 3%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 50%;
+    max-width: 200px;
+  }
+
+  .copyright {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  footer nav {
+    text-align: center;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer nav ul li {
+    margin: 0 5px;
+    right: 22px;
+  }
+
+  /* Back to top button adjustment */
+  #back-to-top {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    right: 3px;
+    font-size: 9px;
+    /* Adjust the font size */
   }
-  
-  header, main, footer {
-    position: relative;
-    z-index: 1;
-  }
+}
