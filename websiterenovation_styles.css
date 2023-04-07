@@ -387,8 +387,8 @@ main {
 
 /* Contact */
 #contact {
-    background-color: rgb(224, 68, 68);
-    color: #f0f0f0;
+    background-color: #f0f0f0;
+    color: rgb(224, 68, 68);
     padding: 50px 10%;
     position: relative;
     padding-bottom: 90px;
@@ -792,13 +792,6 @@ footer nav ul {
 
     .submit-button {
         width: 102.5%;
-    }
-
-    #Panduit .image-link img {
-        width: 100%;
-        /* Ajusta el ancho de la imagen al 100% del contenedor */
-        height: auto;
-        /* Mantiene la proporción de aspecto */
     }
 
     /* Footer adjustments */

@@ -1,11 +1,12 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('font/BebasNeue.ttf') format('truetype');
+  font-family: 'CustomFont';
+  src: url('font/BebasNeue.ttf') format('truetype');
 }
 
 body {
   font-family: 'Jost', sans-serif;
-  padding: 0 5%; /* Agregar padding a los lados */
+  padding: 0 5%;
+  /* Agregar padding a los lados */
 }
 
 
@@ -24,6 +25,15 @@ header {
   right: 0;
   margin: auto;
   z-index: 10;
+}
+
+#menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .logo-container {
@@ -49,16 +59,21 @@ nav ul li {
 nav ul li a {
   font-weight: bold;
   color: rgb(236, 62, 62);
-  font-size: calc(1em + 6px); /* Aumenta la fuente en 8 puntos */
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  transition: all 0.3s ease; /* Agrega transición para el cambio de color y sombra de texto */
+  font-size: calc(1em + 6px);
+  /* Aumenta la fuente en 8 puntos */
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  transition: all 0.3s ease;
+  /* Agrega transición para el cambio de color y sombra de texto */
   padding: 5px;
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 nav ul li a:hover {
-  color: rgb(128, 124, 124); /* Cambia el color del enlace al pasar el mouse por encima */
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+  color: rgb(128, 124, 124);
+  /* Cambia el color del enlace al pasar el mouse por encima */
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
 /* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
@@ -69,7 +84,8 @@ nav ul li:hover::before {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: rgb(224, 68, 68); /* Cambia esto al color que desees */
+  background-color: rgb(224, 68, 68);
+  /* Cambia esto al color que desees */
 }
 
 /* Dropdown menu */
@@ -78,14 +94,17 @@ nav ul li:hover::before {
 }
 
 .dropdown-content {
-  opacity: 0; /* Add this line */
-  visibility: hidden; /* Add this line */
+  opacity: 0;
+  /* Add this line */
+  visibility: hidden;
+  /* Add this line */
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Modify this line */
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  /* Modify this line */
 }
 
 .dropdown-content a {
@@ -97,35 +116,38 @@ nav ul li:hover::before {
 }
 
 .dropdown:hover .dropdown-content {
-  opacity: 1; /* Add this line */
-  visibility: visible; /* Add this line */
+  opacity: 1;
+  /* Add this line */
+  visibility: visible;
+  /* Add this line */
   border-top: 3px solid rgb(224, 68, 68);
 }
 
 /* barra separadora */
 #separator-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:  rgb(224, 68, 68);
-    padding: 50px 163px 16px 175px; /* Agrega el valor del padding inferior aquí */
-    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(224, 68, 68);
+  padding: 50px 163px 16px 175px;
+  /* Agrega el valor del padding inferior aquí */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 .separator-left p,
 .separator-right span,
 .separator-right a {
-    color: #f0f0f0;
-    margin: 0;
-    font-size: 18px;
+  color: #f0f0f0;
+  margin: 0;
+  font-size: 18px;
 }
 
 .separator-right a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .separator-right a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Main */
@@ -134,151 +156,324 @@ main {
 }
 
 #privacy-policy {
-    text-align: center;
-    font-size: 18px;
-    margin: 20px 0;
-    }
-    
-    #privacy-policy h1 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-    }
-    
-    #privacy-policy p {
-    margin-bottom: 10px;
-    }
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+  color: rgb(224, 68, 68);
+}
 
-    /* Agregar estilos para la clase intro-text */
-    .intro-text {
-    text-align: left;
-    color: rgb(224, 68, 68);
-    }
-    
-   /* Agregar estilos para la clase privacy-section */
-   .privacy-section {
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-  
-  #privacy-policy details {
-    border: 1px solid rgb(224, 68, 68);
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    text-shadow: none;
-  }
-  
-  #privacy-policy details summary {
-    outline: none;
-    font-size: 20px;
-    font-weight: 600;
-    color: rgb(224, 68, 68);
-    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
-  }
-  
-  #privacy-policy details p {
-    text-align: left;
-  }
+#privacy-policy h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#privacy-policy p {
+  margin-bottom: 10px;
+}
+
+/* Agregar estilos para la clase intro-text */
+.intro-text {
+  text-align: left;
+  color: rgb(224, 68, 68);
+}
+
+/* Agregar estilos para la clase privacy-section */
+.privacy-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+#privacy-policy details {
+  border: 1px solid rgb(224, 68, 68);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-shadow: none;
+}
+
+#privacy-policy details summary {
+  outline: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(224, 68, 68);
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
+
+#privacy-policy details p {
+  text-align: left;
+}
 
 .section-space {
   height: 20px;
 }
 
-  .support-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 0;
-    background-color: rgb(224, 68, 68); /* Agregar fondo rojo */
-    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+.support-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  background-color: rgb(224, 68, 68);
+  /* Agregar fondo rojo */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 .support-section-left p {
-    font-size: 20px;
-    font-weight: bold;
-    color: #f0f0f0; /* Cambiar el color del texto a blanco */
+  font-size: 20px;
+  font-weight: bold;
+  color: #f0f0f0;
+  /* Cambiar el color del texto a blanco */
 }
 
 .email-support-button {
-    font-size: 20px;
-    font-weight: bold;
-    background-color: #f0f0f0;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(224, 68, 68) /* Cambiar el color del texto a blanco */
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(224, 68, 68)
+    /* Cambiar el color del texto a blanco */
 }
 
 .email-support-button:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 /* Estilos para el footer */
 footer {
-    background-color: #f0f0f0;
-    color: rgb(224, 68, 68);
-    padding: 20px 3.8%; /* Agregar padding a los lados */
-    font-family: 'Jost', sans-serif;
-    text-shadow: 2px 2px 3px #f0f0f0;
+  background-color: #f0f0f0;
+  color: rgb(224, 68, 68);
+  padding: 20px 3.8%;
+  /* Agregar padding a los lados */
+  font-family: 'Jost', sans-serif;
+  text-shadow: 2px 2px 3px #f0f0f0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 180px;
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons a {
+  color: #f0f0f0;
+  margin: 124px;
+}
+
+.social-icons img {
+  width: 2.5%;
+  /* Reduce el tamaño de la imagen en un 80% */
+}
+
+footer nav {
+  font-size: 17px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+}
+
+footer nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  width: 100%;
+  /* Agregar width para que ocupe todo el ancho */
+}
+
+/* Estilos para el botón de volver al inicio */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Agrega un z-index alto para que aparezca por encima de otros elementos */
+  background-color: rgb(224, 68, 68);
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Responsive CSS */
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 8px 5%;
+    margin: 0;
   }
-  
+
+  /* Agrega las siguientes reglas para estirar el ancho de la página */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Eliminar blanco */
+  }
+
+  .logo-container img {
+    max-width: 100%;
+    /* Adjust the maximum width of the logo */
+    height: auto;
+    /* Maintain the aspect ratio */
+  }
+
+  /* Centra mejor el contenido de la separation bar */
+  #separator-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    /* Asegurar que haya espacio entre los elementos */
+  }
+
+  #separator-bar .separator-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 90%;
+    margin-bottom: 20px;
+    /* Agrega un margen inferior de 20px */
+  }
+
+  #separator-bar .separator-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 90%;
+    margin-left: 1px;
+  }
+
+  .separator-right span {
+    padding: 0 5px;
+  }
+
+  #menu-btn {
+    display: block;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.open {
+    display: block;
+  }
+
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    position: absolute;
+    width: 80%;
+    /* Ajusta el ancho */
+    top: 100%;
+    left: 7%;
+    /* Centra el menú en el medio */
+    padding: 20px;
+    /* Añade un espacio alrededor del menú */
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+    border-radius: 8px;
+    /* Redondea las esquinas */
+  }
+
+  .navbar.open ul .dropdown-content a {
+    color: rgb(224, 68, 68);
+    background-color: #f0f0f0;
+  }
+
+  .navbar.open ul li {
+    list-style: none;
+    padding: 10px 0;
+  }
+
+  .navbar.open ul li a {
+    color: #ffffff;
+    /* Cambia el color del texto a blanco */
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    /* Añade un espacio entre los enlaces */
+  }
+
+  section#privacy-policy {
+    padding: 0 18px;
+  }
+
+  .support-section {
+    padding: 0 18px;
+    /* Añade 5px de padding a la izquierda y a la derecha */
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 20px 3%;
+  }
+
   .footer-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    max-width: 100%;
-    margin: 0 auto;
   }
-  
+
   .footer-logo {
-    width: 180px;
+    width: 50%;
+    max-width: 200px;
   }
-  
-  /* Estilos para los íconos de redes sociales */
-  .social-icons a {
-    color: #f0f0f0;
-    margin: 124px;
-  }
-  
-  .social-icons img {
-    width: 2.5%; /* Reduce el tamaño de la imagen en un 80% */
-  }
-  
-  footer nav {
-    font-size: 17px;
-    text-align: center;
-    display: flex;
-    gap: 10px;
-  }
-  
-  footer nav ul {
-    display: flex;
-    gap: 20px;
-  }
-  
+
   .copyright {
     text-align: center;
-    font-size: 18px;
-    margin-top: 20px;
-    width: 100%; /* Agregar width para que ocupe todo el ancho */
+    margin: 10px 0;
   }
-  
-    /* Estilos para el botón de volver al inicio */
-    #back-to-top {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000; /* Agrega un z-index alto para que aparezca por encima de otros elementos */
-      background-color: rgb(224, 68, 68);
-      color: white;
-      font-size: 24px;
-      padding: 10px 15px;
-      border-radius: 50px;
-      cursor: pointer;
+
+  footer nav {
+    text-align: center;
   }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer nav ul li {
+    margin: 0 5px;
+    right: 22px;
+  }
+
+  /* Back to top button adjustment */
+  #back-to-top {
+    position: fixed;
+    right: 3px;
+    font-size: 9px;
+    /* Adjust the font size */
+  }
+}

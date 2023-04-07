@@ -592,7 +592,7 @@ footer nav ul {
 
 @media screen and (max-width: 768px) {
     header {
-        padding: px 3%;
+        padding: 8px 5%;
         margin: 0;
     }
 
@@ -600,6 +600,15 @@ footer nav ul {
     body {
         margin: 0;
         padding: 0;
+        overflow-x: hidden;
+        /* Eliminar blanco */
+    }
+
+    .logo-container img {
+        max-width: 100%;
+        /* Adjust the maximum width of the logo */
+        height: auto;
+        /* Maintain the aspect ratio */
     }
 
     /* Centra mejor el contenido de la separation bar */
@@ -607,22 +616,40 @@ footer nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        text-align: left;
+        justify-content: space-between;
+        /* Asegurar que haya espacio entre los elementos */
     }
 
-    #separator-bar .separator-left,
-    #separator-bar .separator-right {
-        display: block;
-        width: 100%;
+    #separator-bar .separator-left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        width: 90%;
+        margin-bottom: 20px;
+        /* Agrega un margen inferior de 20px */
     }
 
     #separator-bar .separator-right {
-        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        width: 90%;
+        margin-left: 1px;
+    }
+
+    .separator-right span {
+        padding: 0 5px;
     }
 
     #menu-btn {
         display: block;
         background-color: rgb(224, 68, 68);
+        color: #f0f0f0;
         border-radius: 5px;
     }
 
@@ -683,6 +710,7 @@ footer nav ul {
     .section-1 .left-column,
     .section-3 .r-column {
         width: 100%;
+        order: 1;
     }
 
     .section-1 .right-column,
@@ -691,7 +719,7 @@ footer nav ul {
         margin-left: 0;
         margin-right: 0;
     }
-
+  
     .grid-container {
         flex-direction: column;
         align-items: center;
@@ -707,39 +735,47 @@ footer nav ul {
     }
 
     .support-section {
-        padding: 0 18px; /* Añade 5px de padding a la izquierda y a la derecha */
-      }
-    
-      .section-2 .image-container img {
-        width: 25%; /* Hace que las imágenes sean un 50% más pequeñas */
-      }
+        padding: 0 18px;
+        /* Añade 5px de padding a la izquierda y a la derecha */
+    }
 
-      .section-2 h1 {
-        margin-bottom: 60px; /* Añade un espacio de 20px entre las imágenes */
-      }
+    .section-2 .image-container img {
+        width: 25%;
+        /* Hace que las imágenes sean un 50% más pequeñas */
+    }
 
-      .section-2 h2 {
-        margin-top: 50px; /* Añade un espacio de 20px entre las imágenes */
-      }
-    
-      .section-2 .image-container:not(:last-child) {
-        margin-bottom: 100px; /* Añade un espacio de 20px entre las imágenes */
-      }
-    
-      .r-column h2 {
-        margin-bottom: 40px; /* Añade un espacio de 20px debajo de cada párrafo */
-      }
+    .section-2 h1 {
+        margin-bottom: 60px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
 
-      .r-column p {
-        margin-bottom: 45px; /* Añade un espacio de 20px debajo de cada párrafo */
+    .section-2 h2 {
+        margin-top: 50px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
+
+    .section-2 .image-container:not(:last-child) {
+        margin-bottom: 100px;
+        /* Añade un espacio de 20px entre las imágenes */
+    }
+
+    .r-column h2 {
+        margin-bottom: 40px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
+    }
+
+    .r-column p {
+        margin-bottom: 45px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
         font-size: 18px;
-      }
+    }
 
-      .section-1 .left-column p {
-        margin-bottom: 45px; /* Añade un espacio de 20px debajo de cada párrafo */
+    .section-1 .left-column p {
+        margin-bottom: 45px;
+        /* Añade un espacio de 20px debajo de cada párrafo */
         font-size: 16px;
-      }
-      
+    }
+
     #contact {
         flex-direction: column;
     }
@@ -755,6 +791,56 @@ footer nav ul {
     }
 
     .submit-button {
+        width: 102.5%;
+    }
+
+    #Panduit .image-link img {
         width: 100%;
+        /* Ajusta el ancho de la imagen al 100% del contenedor */
+        height: auto;
+        /* Mantiene la proporción de aspecto */
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 20px 3%;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        width: 50%;
+        max-width: 200px;
+    }
+
+    .copyright {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    footer nav {
+        text-align: center;
+    }
+
+    footer nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer nav ul li {
+        margin: 0 5px;
+        right: 22px;
+    }
+
+    /* Back to top button adjustment */
+    #back-to-top {
+        position: fixed;
+        right: 3px;
+        font-size: 9px;
+        /* Adjust the font size */
     }
 }

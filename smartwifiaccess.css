@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'CustomFont';
-    src: url('font/BebasNeue.ttf') format('truetype');
+  font-family: 'CustomFont';
+  src: url('font/BebasNeue.ttf') format('truetype');
 }
 
 body {
   font-family: 'Jost', sans-serif;
-  padding: 0 5%; /* Agregar padding a los lados */
+  padding: 0 5%;
+  /* Agregar padding a los lados */
 }
-
 
 /* Header */
 header {
@@ -26,8 +26,13 @@ header {
   z-index: 10;
 }
 
-.menu-icon {
+#menu-btn {
   display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
 .logo-container {
@@ -53,16 +58,21 @@ nav ul li {
 nav ul li a {
   font-weight: bold;
   color: rgb(236, 62, 62);
-  font-size: calc(1em + 6px); /* Aumenta la fuente en 8 puntos */
-  text-decoration: none; /* Elimina el subrayado de los enlaces */
-  transition: all 0.3s ease; /* Agrega transición para el cambio de color y sombra de texto */
+  font-size: calc(1em + 6px);
+  /* Aumenta la fuente en 8 puntos */
+  text-decoration: none;
+  /* Elimina el subrayado de los enlaces */
+  transition: all 0.3s ease;
+  /* Agrega transición para el cambio de color y sombra de texto */
   padding: 5px;
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 nav ul li a:hover {
-  color: rgb(128, 124, 124); /* Cambia el color del enlace al pasar el mouse por encima */
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+  color: rgb(128, 124, 124);
+  /* Cambia el color del enlace al pasar el mouse por encima */
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
 /* Añade la línea roja de 3px en la parte superior cuando el mouse se posa sobre la opción */
@@ -73,7 +83,8 @@ nav ul li:hover::before {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: rgb(224, 68, 68); /* Cambia esto al color que desees */
+  background-color: rgb(224, 68, 68);
+  /* Cambia esto al color que desees */
 }
 
 /* Dropdown menu */
@@ -82,14 +93,17 @@ nav ul li:hover::before {
 }
 
 .dropdown-content {
-  opacity: 0; /* Add this line */
-  visibility: hidden; /* Add this line */
+  opacity: 0;
+  /* Add this line */
+  visibility: hidden;
+  /* Add this line */
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  transition: opacity 0.4s ease, visibility 0.4s ease; /* Modify this line */
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  /* Modify this line */
 }
 
 .dropdown-content a {
@@ -101,8 +115,10 @@ nav ul li:hover::before {
 }
 
 .dropdown:hover .dropdown-content {
-  opacity: 1; /* Add this line */
-  visibility: visible; /* Add this line */
+  opacity: 1;
+  /* Add this line */
+  visibility: visible;
+  /* Add this line */
   border-top: 3px solid rgb(224, 68, 68);
 }
 
@@ -129,14 +145,16 @@ main {
 #slogan h2 {
   font-weight: bold;
   color: rgb(224, 68, 68);
-  font-size: calc(1em + 8px); /* Aumenta la fuente en 8 puntos */
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); 
+  font-size: calc(1em + 8px);
+  /* Aumenta la fuente en 8 puntos */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
 #slogan p {
   font-size: 28px;
   color: rgb(224, 68, 68);
-  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5); /* Sombreado para resaltar el texto sobre el fondo rojo */
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+  /* Sombreado para resaltar el texto sobre el fondo rojo */
 }
 
 #slogan .blinking-image {
@@ -147,10 +165,12 @@ main {
 }
 
 @keyframes fadeInOut {
+
   0%,
   100% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
@@ -212,34 +232,25 @@ main {
   display: block;
   margin: 0 auto;
 }
-    
+
 .certification-title {
   margin-top: 10px;
   font-size: 1.1em;
   font-weight: bold;
   text-align: center;
-  }
-  
-  .certification-description {
+  text-shadow: none;
+  margin-bottom: 15px;
+}
+
+.certification-description {
   text-align: center;
-  margin-top: 5px;
+  margin-top: 15px;
   font-size: 0.8em;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: none;
-  }
-  
-  @media screen and (max-width: 768px) {
-  #certifications ul.certification-list {
-  flex-direction: column;
-  }
-  
-  #certifications ul.certification-list li {
-  flex-basis: 100%;
-  margin-bottom: 15px;
-  }
-  }
+  text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+}
 
 /* Gallery */
 #gallery {
@@ -251,7 +262,8 @@ main {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px; /* Espacio entre las imágenes */
+  gap: 5px;
+  /* Espacio entre las imágenes */
   text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
@@ -295,7 +307,8 @@ main {
   max-height: 500px;
   object-fit: cover;
   transition: transform 0.5s ease;
-  border-radius: 25px; /* Add this line to make the images rounded */
+  border-radius: 25px;
+  /* Add this line to make the images rounded */
 }
 
 .gallery-row .image-container:hover img {
@@ -310,8 +323,10 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 50px; /* Add padding to create a margin around the text */
-  box-sizing: border-box; /* Adjust the box model to include padding in the dimensions */
+  padding: 50px;
+  /* Add padding to create a margin around the text */
+  box-sizing: border-box;
+  /* Adjust the box model to include padding in the dimensions */
   background-color: rgba(22, 22, 22, 0.5);
   color: #fff;
   display: flex;
@@ -353,7 +368,8 @@ main {
   width: 750px;
   height: 500px;
   overflow: hidden;
-  border-radius: 15px; /* Add this line to make the container rounded */
+  border-radius: 15px;
+  /* Add this line to make the container rounded */
 }
 
 .image-container img {
@@ -403,20 +419,25 @@ main {
 /* Panduit */
 
 #Panduit .Panduit-Container {
-  width: 100%; /* Establecer el ancho del contenedor al 100% de la página */
+  width: 100%;
+  /* Establecer el ancho del contenedor al 100% de la página */
 }
 
 #Panduit .Panduit-Container img {
-  display: block; /* Hacer que la imagen se muestre como un elemento de bloque */
-  width: 100%; /* Establecer el ancho de la imagen al 100% del contenedor */
-  height: auto; /* Mantener la relación de aspecto de la imagen */
-  object-fit: cover; /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+  display: block;
+  /* Hacer que la imagen se muestre como un elemento de bloque */
+  width: 100%;
+  /* Establecer el ancho de la imagen al 100% del contenedor */
+  height: auto;
+  /* Mantener la relación de aspecto de la imagen */
+  object-fit: cover;
+  /* Asegurar que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
 }
 
 /* Newsletter */
 #newsletter {
   background-color: rgb(224, 68, 68);
-  color:  #f0f0f0;
+  color: #f0f0f0;
   padding: 50px 5%;
   text-align: center;
   text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
@@ -430,14 +451,14 @@ main {
 
 #newsletter button {
   padding: 10px 20px;
-  background-color:  #f0f0f0;
+  background-color: #f0f0f0;
   color: rgb(224, 68, 68);
   border: none;
   cursor: pointer;
   text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
 }
 
-  /* Latest updates */
+/* Latest updates */
 
 #blog-news {
   background-color: #f0f0f0;
@@ -469,14 +490,17 @@ main {
   display: inline-block;
   width: 280px;
   overflow: hidden;
-  border-radius: 10px; /* Añade bordes redondeados al contenedor */
+  border-radius: 10px;
+  /* Añade bordes redondeados al contenedor */
 }
 
 .blog-container img {
   width: 280px;
   height: auto;
-  border-radius: 10px; /* Añade bordes redondeados a la imagen */
-  object-fit: cover; /* Asegura que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
+  border-radius: 10px;
+  /* Añade bordes redondeados a la imagen */
+  object-fit: cover;
+  /* Asegura que la imagen mantenga su relación de aspecto al ajustarse al contenedor */
 }
 
 .image-caption {
@@ -484,13 +508,15 @@ main {
   text-align: center;
 }
 
-  /* Contact */
+/* Contact */
 #contact {
   background-color: rgb(224, 68, 68);
-  color:  #f0f0f0;;
+  color: #f0f0f0;
+  ;
   padding: 50px 10%;
   position: relative;
-  padding-bottom: 90px; /* Aumentar el padding-bottom en 3px */
+  padding-bottom: 90px;
+  /* Aumentar el padding-bottom en 3px */
   overflow: hidden;
   display: flex;
   flex-direction: row;
@@ -522,14 +548,18 @@ h2 {
 
 #contact form {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* divide el formulario en 2 columnas */
-  gap: 26px; /* espacio entre las filas y columnas */
-  text-align: center; /* alinea el texto del formulario a la izquierda */
+  grid-template-columns: 1fr 2fr;
+  /* divide el formulario en 2 columnas */
+  gap: 26px;
+  /* espacio entre las filas y columnas */
+  text-align: center;
+  /* alinea el texto del formulario a la izquierda */
 }
 
 #contact input,
 #contact textarea {
-  width: 100%; /* ocupa todo el ancho disponible en su celda */
+  width: 100%;
+  /* ocupa todo el ancho disponible en su celda */
 }
 
 /* Hacer que el botón ocupe las dos columnas */
@@ -544,27 +574,49 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   text-align: center;
-  font-family: 'Jost', sans-serif; /* Fuente igual que la barra de navegación */
+  font-family: 'Jost', sans-serif;
+  /* Fuente igual que la barra de navegación */
 }
 
 .neon-image-container {
   position: relative;
-  width: 100%; /* Ajusta el ancho según sea necesario */
-  max-width: 400px; /* Ajusta el tamaño máximo según sea necesario */
-  margin: 0 auto; /* Centrar la imagen */
+  width: 100%;
+  /* Ajusta el ancho según sea necesario */
+  max-width: 400px;
+  /* Ajusta el tamaño máximo según sea necesario */
+  margin: 0 auto;
+  /* Centrar la imagen */
 }
 
 .neon-image-container img {
   width: 100%;
   height: auto;
-  border-radius: 15px; /* Añade bordes redondeados a la imagen */
+  border-radius: 15px;
+  /* Añade bordes redondeados a la imagen */
+}
+
+/* Estilos para el botón de volver al inicio */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  /* Agrega un z-index alto para que aparezca por encima de otros elementos */
+  background-color: rgb(224, 68, 68);
+  color: white;
+  font-size: 24px;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 /* Estilos para el footer */
 footer {
   background-color: #f0f0f0;
   color: rgb(224, 68, 68);
-  padding: 20px 3.8%; /* Agregar padding a los lados */
+  padding: 20px 3.8%;
+  /* Agregar padding a los lados */
   font-family: 'Jost', sans-serif;
   text-shadow: 2px 2px 3px #f0f0f0;
 }
@@ -596,20 +648,223 @@ footer nav ul {
 .copyright {
   text-align: center;
   font-size: 18px;
-  width: 100%; /* Agregar width para que ocupe todo el ancho */
+  width: 100%;
+  /* Agregar width para que ocupe todo el ancho */
 }
 
-  /* Estilos para el botón de volver al inicio */
-  #back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Agrega un z-index alto para que aparezca por encima de otros elementos */
-    background-color: rgb(224, 68, 68);
-    color: white;
-    font-size: 24px;
-    padding: 10px 15px;
-    border-radius: 50px;
-    cursor: pointer;
+/* Responsive CSS */
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 8px 5%;
+    margin: 0;
   }
+
+  /* Agrega las siguientes reglas para estirar el ancho de la página */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Eliminar blanco */
+  }
+
+  .logo-container img {
+    max-width: 100%;
+    /* Adjust the maximum width of the logo */
+    height: auto;
+    /* Maintain the aspect ratio */
+  }
+
+  .blinking-image img {
+    max-width: 100%;
+    /* Adjust the maximum width of the image */
+    height: auto;
+    /* Maintain the aspect ratio */
+  }
+
+  #menu-btn {
+    display: block;
+    background-color: rgb(224, 68, 68);
+    color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .navbar.open {
+    display: block;
+  }
+
+  .navbar.open ul {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(224, 68, 68);
+    /* Añade un fondo oscuro */
+    color: #f0f0f0;
+    position: absolute;
+    width: 80%;
+    /* Ajusta el ancho */
+    top: 100%;
+    left: 7%;
+    /* Centra el menú en el medio */
+    padding: 20px;
+    /* Añade un espacio alrededor del menú */
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(10, 10, 10, 0.5);
+    border-radius: 8px;
+    /* Redondea las esquinas */
+  }
+
+  .navbar.open ul .dropdown-content a {
+    color: rgb(224, 68, 68);
+    background-color: #f0f0f0;
+  }
+
+  .navbar.open ul li {
+    list-style: none;
+    padding: 10px 0;
+  }
+
+  .navbar.open ul li a {
+    color: #ffffff;
+    /* Cambia el color del texto a blanco */
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    /* Añade un espacio entre los enlaces */
+  }
+
+  /* Slogan */
+  #slogan h1 {
+    font-size: 34px;
+  }
+
+  #slogan h2 {
+    font-size: 22px;
+  }
+
+  #slogan p {
+    font-size: 20px;
+  }
+
+  .certification-list li {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .certification-list li:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+
+  .gallery-row {
+    flex-direction: column;
+  }
+
+  .gallery-row .image-container,
+  .gallery-row .text-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .text-container h3 {
+    font-size: 1.5em;
+  }
+
+  .text-container p {
+    font-size: 1em;
+  }
+
+  /* Cambiar el orden de la imagen y el texto en todas las filas */
+  .gallery-row .image-container {
+    order: 1;
+  }
+
+  .gallery-row .text-container {
+    order: 2;
+  }
+
+  /* Para mostrar la imagen y el texto uno debajo del otro */
+  .gallery-row:nth-child(even) .image-container {
+    order: 1;
+  }
+
+  #newsletter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #newsletter form {
+    display: block;
+  }
+
+  #newsletter input[type="email"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 8px 0;
+
+  }
+
+  #contact {
+    flex-direction: column;
+  }
+
+  #contact .right-column {
+    width: 100%;
+  }
+
+  #contact form {
+    grid-template-columns: 1fr;
+    /* make form a single column */
+    gap: 15px;
+  }
+
+  .submit-button {
+    width: 102.5%;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 20px 3%;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    width: 50%;
+    max-width: 200px;
+  }
+
+  .copyright {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  footer nav {
+    text-align: center;
+  }
+
+  footer nav ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  footer nav ul li {
+    margin: 0 5px;
+    right: 22px;
+  }
+
+  /* Back to top button adjustment */
+  #back-to-top {
+    position: fixed;
+    right: 3px;
+    font-size: 9px;
+    /* Adjust the font size */
+  }
+}

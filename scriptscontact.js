@@ -1,13 +1,13 @@
- // Funcionalidad dropdown
+// Funcionalidad dropdown
 function setupBlinkingImage() {
   const header = document.querySelector('header');
   const blinkingImage = document.getElementById('blinking-image');
-  
+
   header.addEventListener('mouseover', () => {
     blinkingImage.classList.add('fadeIn');
     blinkingImage.classList.remove('fadeOut');
   });
-  
+
   header.addEventListener('mouseout', () => {
     blinkingImage.classList.remove('fadeIn');
     blinkingImage.classList.add('fadeOut');
@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
   navLinks.forEach(link => {
     link.addEventListener('click', function (event) {
       let hrefValue = this.getAttribute('href');
-  
+
       // Check if the link is an internal link
       if (hrefValue.startsWith('#')) {
         event.preventDefault();
         let target = document.querySelector(hrefValue);
         let targetPosition = target.offsetTop - headerHeight;
-  
+
         window.scrollTo({ top: targetPosition, behavior: 'smooth' });
       }
     });
@@ -54,6 +54,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Funcionalidad para moviles
 
-document.querySelector('.menu-icon').addEventListener('click', function () {
-  document.querySelector('nav ul').classList.toggle('show');
+document.addEventListener('click', function (event) {
+  if (!event.target.closest('header')) {
+      document.querySelector('.navbar').classList.remove('open');
+  }
+});
+
+$(document).ready(function () {
+  $("#menu-btn").click(function () {
+      $(".navbar").toggleClass("open");
+  });
 });
